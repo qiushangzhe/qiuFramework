@@ -1,7 +1,8 @@
 //压缩html
 var gulp = require('gulp'),
-    htmlmin = require('gulp-htmlmin');
-
+    htmlmin = require('gulp-htmlmin'),
+    plumber = require('gulp-plumber'),
+    notify = require('gulp-notify');
 gulp.task('htmlmin', function () {
     var options = {
         removeComments: true,//清除HTML注释
@@ -14,6 +15,7 @@ gulp.task('htmlmin', function () {
         minifyCSS: true//压缩页面CSS
     };
     return gulp.src('./src/**/*.html')
+        .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
         .pipe(htmlmin(options))
         .pipe(gulp.dest('./dist/'));
 });

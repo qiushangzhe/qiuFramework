@@ -13,7 +13,7 @@ function createFile(){
     fs.mkdirSync("src/js");
     fs.mkdirSync("src/style");
     fs.mkdirSync("src/views");
-    fs.writeFile("src/index.html","这个index.html");
+    fs.writeFile("src/index.html",fs.readFileSync("tasks/defaultFile/index.html"));
 
     fs.mkdirSync("mock");
 }

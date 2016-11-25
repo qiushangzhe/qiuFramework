@@ -11,7 +11,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 2. 安装依赖包
 ```
-npm install
+cnpm install
 ```
 3. 创建目录
 ```
